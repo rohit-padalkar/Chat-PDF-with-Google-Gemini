@@ -1,6 +1,4 @@
-# 📚 Chat PDF with Gemini AI
-
-![Chat PDF Banner](https://www.imghippo.com/i/yVesd1729514079.jpg)
+# 📚 PDF Chatter with Gemini AI
 
 ## 🌟 Overview
 
