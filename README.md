@@ -56,11 +56,9 @@ Chat PDF is an innovative Streamlit application that allows users to interact wi
 
 ## 📸 Screenshots
 
-![Screenshot 1](https://your-image-url-here.com/screenshot1.png)
-_Caption for Screenshot 1_
+![Screenshot 1](https://drive.google.com/drive/u/3/folders/1bqpjB-TAfBGkrEJqOx3gZWqFf_6oq-Ap)
 
-![Screenshot 2](https://your-image-url-here.com/screenshot2.png)
-_Caption for Screenshot 2_
+
 
 ## 🤝 Contributing
 
@@ -78,4 +76,4 @@ This project is [MIT](https://choosealicense.com/licenses/mit/) licensed.
 
 ---
 
-Made with ❤️ by [Your Name](https://github.com/yourusername)
+Made with ❤️ by [Rohit Padalkar]([https://github.com/rohit-padalkar]
