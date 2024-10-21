@@ -17,6 +17,7 @@ from langchain.chains import RetrievalQA
 import pinecone
 from pinecone import Pinecone, ServerlessSpec
 from langchain.vectorstores import Pinecone as LangchainPinecone
+import json
 
 load_dotenv()
 
@@ -129,13 +130,46 @@ def user_input(user_question):
     
     return response["result"]
 
-def load_lottie_url(url: str):
+def ensure_dir(directory):
+    if not os.path.exists(directory):
+        os.makedirs(directory)
+
+def download_lottie_file(url, filepath):
     r = requests.get(url)
-    if r.status_code != 200:
+    if r.status_code == 200:
+        with open(filepath, 'w') as f:
+            json.dump(r.json(), f)
+        return True
+    return False
+
+def load_lottie_file(filepath):
+    if not os.path.exists(filepath):
         return None
-    return r.json()
+    with open(filepath, "r") as f:
+        return json.load(f)
+
+def setup_lottie_files():
+    lottie_dir = "lottie_files"
+    ensure_dir(lottie_dir)
+    
+    lottie_urls = {
+        "file_upload": "https://assets9.lottiefiles.com/packages/lf20_iorpbol0.json",
+        "ai_chat": "https://assets3.lottiefiles.com/packages/lf20_26KVvs.json",
+        "success": "https://assets9.lottiefiles.com/packages/lf20_lk80fpsm.json",
+        "book": "https://assets5.lottiefiles.com/packages/lf20_1a8dx7zj.json"
+    }
+    
+    for name, url in lottie_urls.items():
+        filepath = os.path.join(lottie_dir, f"{name}.json")
+        if not os.path.exists(filepath):
+            if download_lottie_file(url, filepath):
+                print(f"Downloaded {name} Lottie file")
+            else:
+                print(f"Failed to download {name} Lottie file")
 
 def main():
+    setup_lottie_files()
+    
     st.set_page_config(page_title="Chat PDF", page_icon="📚", layout="wide")
 
     # Custom CSS for animations and styling
@@ -191,6 +225,12 @@ def main():
     # Sidebar
     with st.sidebar:
         st.title("📁 Document Upload")
+        
+        # Add a Lottie animation for file upload
+        lottie_upload = load_lottie_file("lottie_files/file_upload.json")
+        if lottie_upload:
+            st_lottie(lottie_upload, speed=1, height=200, key="upload_animation")
+        
         pdf_docs = st.file_uploader(
             "Upload your PDF file",
             accept_multiple_files=True,
@@ -217,6 +257,12 @@ def main():
 
     # Main content
     st.title("Chat with PDF using Gemini 💬")
+    
+    # Add a Lottie animation for AI chat
+    lottie_chat = load_lottie_file("lottie_files/ai_chat.json")
+    if lottie_chat:
+        st_lottie(lottie_chat, speed=1, height=200, key="chat_animation")
+    
     st.markdown("---")
 
     # Initialize session state for user question and answer if they don't exist
@@ -243,10 +289,16 @@ def main():
     if st.session_state.answer:
         st.markdown("### Answer:")
         st.write(st.session_state.answer)
+        
+        # Add a Lottie animation for successful answer
+        lottie_success = load_lottie_file("lottie_files/success.json")
+        if lottie_success:
+            st_lottie(lottie_success, speed=1, height=200, key="success_animation")
 
-    # You can keep the Lottie animation if you want
-    # lottie_book = load_lottie_url("https://assets5.lottiefiles.com/packages/lf20_1a8dx7zj.json")
-    # st_lottie(lottie_book, speed=1, height=200, key="book")
+    # Add a Lottie animation at the bottom for decoration
+    lottie_book = load_lottie_file("lottie_files/book.json")
+    if lottie_book:
+        st_lottie(lottie_book, speed=0.5, height=300, key="book")
 
 if __name__ == "__main__":
     main()
