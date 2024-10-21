@@ -1,6 +1,6 @@
 # 📚 Chat PDF with Gemini AI
 
-![Chat PDF Banner](https://your-image-url-here.com/banner.png)
+![Chat PDF Banner](https://www.imghippo.com/i/yVesd1729514079.jpg)
 
 ## 🌟 Overview
 
@@ -53,14 +53,6 @@ Chat PDF is an innovative Streamlit application that allows users to interact wi
    ```
 
 5. **Open your browser** and navigate to `http://localhost:8501`
-
-## 📸 Screenshots
-
-![logo](https://www.imghippo.com/i/yVesd1729514079.jpg)
-
-
-
-
 
 ## 🤝 Contributing
 
