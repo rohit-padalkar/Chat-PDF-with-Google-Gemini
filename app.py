@@ -302,8 +302,7 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-
-
-
-
+else:
+    # Create a new Streamlit app
+    app = st.create_app()
+    app.add_app("main", main)
