@@ -1,6 +1,4 @@
-# 📚 Chat PDF with Gemini AI
-
-![Chat PDF Banner](https://your-image-url-here.com/banner.png)
+# 📚 PDF Chatter with Gemini AI
 
 ## 🌟 Overview
 
@@ -54,14 +52,6 @@ Chat PDF is an innovative Streamlit application that allows users to interact wi
 
 5. **Open your browser** and navigate to `http://localhost:8501`
 
-## 📸 Screenshots
-
-![Screenshot 1](https://your-image-url-here.com/screenshot1.png)
-_Caption for Screenshot 1_
-
-![Screenshot 2](https://your-image-url-here.com/screenshot2.png)
-_Caption for Screenshot 2_
-
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](https://github.com/yourusername/chat-pdf-gemini/issues).
@@ -78,4 +68,4 @@ This project is [MIT](https://choosealicense.com/licenses/mit/) licensed.
 
 ---
 
-Made with ❤️ by [Your Name](https://github.com/yourusername)
+Made with ❤️ by [Rohit Padalkar]([https://github.com/rohit-padalkar]
