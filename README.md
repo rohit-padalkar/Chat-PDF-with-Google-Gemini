@@ -56,7 +56,7 @@ Chat PDF is an innovative Streamlit application that allows users to interact wi
 
 ## 📸 Screenshots
 
-![Screenshot 1]([https://drive.google.com/drive/u/3/folders/1bqpjB-TAfBGkrEJqOx3gZWqFf_6oq-Ap](https://drive.google.com/file/d/1sRZfY0uxokl32tAXSGzGLJp2bcpSNGvL/view?usp=sharing))
+![Screenshot 1]([https://www.imghippo.com/i/yVesd1729514079.jpg])
 
 
 
